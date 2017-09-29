@@ -1,0 +1,19 @@
+<% if @user.errors.any? %>
+  <div>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<form action="/users" method="post">
+  <label for="user[email]">Email</label>
+  <input type="email" name="user[email]" placeholder="email">
+  <label for="user[password]">Password</label>
+  <input type="password" name="user[password]" placeholder="password">
+  <input type="submit" value="submit">
+</form>
+<br>
+
