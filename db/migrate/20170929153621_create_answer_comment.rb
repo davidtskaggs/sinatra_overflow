@@ -1,10 +1,10 @@
 class CreateAnswerComment < ActiveRecord::Migration
   def change
     create_table :answer_comment do |t|
-      t.string :content
-      t.string :author_id
-      t.string :answer_id
-      t.string :comment_votes_id
+      t.string :content, null: false
+      t.string :author_id, null: false
+      t.string :answer_id, null: false
+      t.string :comment_votes_id, null: false
 
       t.timestamps
     end
