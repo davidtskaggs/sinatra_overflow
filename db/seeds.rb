@@ -16,5 +16,6 @@
   email: Faker::Internet.free_email,
   password: Faker::Internet.password(10, 15)
   )
-
 end
+
+new_question = Question.create(title: "What is a coding bootcamp?", content: "Looking into coding bootcamps. I would like to know more about them. Currently in NYC", user_id: 1)

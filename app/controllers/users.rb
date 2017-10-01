@@ -24,11 +24,11 @@ post '/users' do
 end
 
 get '/users/question' do
-  @posts = Post.all
+  @questions = Questions.all
   erb :index
 end
 
 post '/users/question' do
-  @user = User.find_by(params[:user_id])
+  @user = User.find_by(user: params[user.id])
   redirect '/'
 end
