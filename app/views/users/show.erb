@@ -1,7 +1,19 @@
-<h2><%= @user.email %></h2>
-
-
-<!-- <h2>This is your session (do not show this to the user in real life!)</h2>
-<%= session.inspect %>
 <a href="/">Home</a>
 <a href="/sessions/logout">Logout</a>
+
+<h2><%= "Welcome, #{@user.email}"%></h2>
+
+<!-- Create action route to make this work!!!!! -->
+<form action="/" method="post">
+  <div>
+    <label for="question-title">Question Title:</label>
+    <input type="text" id="question-title" name="question-title">
+  </div>
+  <div>
+    <label for="msg">Question:</label>
+    <textarea id="question" name="user-question"></textarea>
+  </div>
+  <div class="button">
+    <button type="submit">Send your message</button>
+  </div>
+</form>
