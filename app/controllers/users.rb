@@ -22,3 +22,13 @@ post '/users' do
     erb :'users/new'
   end
 end
+
+get '/users/question' do
+  @posts = Post.all
+  erb :index
+end
+
+post '/users/question' do
+  @user = User.find_by(params[:user_id])
+  redirect '/'
+end

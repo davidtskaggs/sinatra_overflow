@@ -4,7 +4,7 @@
 <h2><%= "Welcome, #{@user.email}"%></h2>
 
 <!-- Create action route to make this work!!!!! -->
-<form action="/" method="post">
+<form id="new-question-form" action="/users/question" method="post">
   <div>
     <label for="question-title">Question Title:</label>
     <input type="text" id="question-title" name="question-title">

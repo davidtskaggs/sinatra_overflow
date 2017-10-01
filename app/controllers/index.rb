@@ -7,10 +7,7 @@ end
 #   redirect '/posts'
 # end
 
-# get '/posts' do
-#   @posts = Post.all
-#   erb :index
-# end
+
 
 # post '/posts/:id/vote' do
 #   post = Post.find(params[:id])
