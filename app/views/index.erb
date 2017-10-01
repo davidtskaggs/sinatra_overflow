@@ -1,5 +1,4 @@
-<!-- <h1>DBC Sinatra Overflow!!</h1>
-
+<h1>DBC Sinatra Overflow!!</h1>
 
 <div class="container">
   <h1>What do you want to do?</h1>
@@ -18,9 +17,9 @@
   </p>
 </header>
 
-
+<!-- below is breaking code for some reason -->
 <div class='post-container'>
-  <% @posts.each do |post| %>
+  <%= @posts.each do |post| %>
 
     <article id="<%= post.id %>">
       <form method="post" action='/posts/<%= post.id %>/vote' class="inline">
@@ -37,4 +36,4 @@
     </article>
 
   <% end %>
-</div> -->
+</div>

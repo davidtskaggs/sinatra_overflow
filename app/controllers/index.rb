@@ -1,7 +1,8 @@
-# get '/' do
-#   erb :index
-# end
+get '/' do
+  erb :index
+end
 
+# THE BELOW BREAKS THE CODE
 # get '/' do
 #   redirect '/posts'
 # end
