@@ -1,19 +1,57 @@
 <a href="/">Home</a>
 <a href="/sessions/logout">Logout</a>
 
-<h2><%= "Welcome, #{@user.email}"%></h2>
+<h1><%= "Welcome, #{@user.email}"%></h1>
+
+
+
+<h2>List of questions:</h2>
+
+<div class="list-of-question">
+  <% @questions.each_with_index do |question, index| %>
+  <span> <b>Question <%= index %></b> </span>
+  <br>
+  <span> <b>Title:</b> <%= question.title %></span>
+  <br>
+  <span> <b>Content:</b> <%= question.content %></span>
+  <br>
+
+  <br>
+  <br>
+  <% end %>
+</div>
 
 <!-- Create action route to make this work!!!!! -->
 <form id="new-question-form" action="/users/question" method="post">
+  <h3>Ask a question</h3>
   <div>
     <label for="question-title">Question Title:</label>
-    <input type="text" id="question-title" name="question-title">
+    <input type="text" id="question-title" name="title">
   </div>
   <div>
     <label for="msg">Question:</label>
-    <textarea id="question" name="user-question"></textarea>
+    <textarea id="question" name="content"></textarea>
   </div>
   <div class="button">
-    <button type="submit">Send your message</button>
+    <button type="submit">Submit</button>
   </div>
 </form>
+
+
+
+<form id="new-answer-form" action="/users/answer" method="post">
+  <h3>Respond to question</h3>
+  <div>
+    <label for="answer-title">Question number:</label>
+    <input type="text" id="question-number" name="question-id">
+  </div>
+  <div>
+    <label for="msg">Answer:</label>
+    <textarea id="answer" name="content"></textarea>
+  </div>
+  <div class="button">
+    <button type="submit">Submit</button>
+  </div>
+</form>
+
+
