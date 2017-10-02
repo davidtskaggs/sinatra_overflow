@@ -6,7 +6,7 @@ end
 
 get '/users/:id' do
   @user = User.find_by(id: params[:id])
-
+  @questions = Question.all
   redirect '/' unless @user.id == session[:user_id]
 
   erb :'users/show'
@@ -24,11 +24,23 @@ post '/users' do
 end
 
 get '/users/question' do
-  @questions = Questions.all
+  @questions = Question.all
   erb :index
 end
 
 post '/users/question' do
-  @user = User.find_by(user: params[user.id])
+  # @user = User.find_by(user: params[user.id])
+  @question = Question.new(title: params[:title],
+    content: params[:content])
+  @question.save
   redirect '/'
 end
+
+post '/users/answer' do
+  @answer = Answer.new(content: params[:content],
+    user_id: session[:user_id],
+      question_id: params["question-id"])
+  @answer.save
+ redirect '/'
+end
+

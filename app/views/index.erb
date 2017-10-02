@@ -1,18 +1,38 @@
 <h1>DBC Sinatra Overflow!!</h1>
 
 <div class="container">
-  <h1>What do you want to do?</h1>
-  <h2><a href="/users/new">Register</a></h2>
-  <h2><a href="/sessions/new">Log in</a></h2>
+  <h2>What do you want to do?</h2>
+  <h3><a href="/users/new">Register</a></h3>
+  <h3><a href="/sessions/new">Log in</a></h3>
+   <!--  <h2><a href="#posts">ask a question</a></h2>
+    <h2><a href="#">comments</a></h2>
+    <h2><a href="#">vote</a></h2> -->
 </div>
 
+<br>
 
-<header>
-  <h1>DBC Sinatra Overflow</h1>
-  <p>
-    <a href="#posts">new</a>
-    <a href="#">comments</a>
-    <a href="#">vote</a>
-    <a href="#">login</a>
-  </p>
-</header>
+<h2>List of questions:</h2>
+
+<div class="list-of-question">
+  <% @questions.each_with_index do |question, index| %>
+  <span> <b>Question <%= index %></b> </span>
+  <br>
+  <span> <b>Title:</b> <%= question.title %></span>
+  <br>
+  <span> <b>Content:</b> <%= question.content %></span>
+  <br>
+
+  <br>
+  <% end %>
+</div>
+
+<h2>List of answers:</h2>
+
+<div class="list-of-answer">
+<% @answers.each do |a|%>
+<span> <b>Question number<%= a.question_id %></b> </span>
+  <br>
+  <span> <b>Answer:</b> <%= a.content %></span>
+  <br>
+<% end %>
+</div>
